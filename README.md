@@ -26,3 +26,7 @@ The website is live at [bavarder.codeberg.page](https://bavarder.codeberg.page)
 ├── LICENSE
 └── README.md
 ```
+
+### Stats
+
+You can see the stats for this website at [https://analytics.projectsegfau.lt/bavarder.codeberg.page/](https://analytics.projectsegfau.lt/bavarder.codeberg.page/)
