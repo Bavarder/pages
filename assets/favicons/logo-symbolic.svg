@@ -19,7 +19,7 @@
       width="256"
       height="256"
       fill="url(#Gradient)"
-      ry="0"
+      ry="128"
       x="0"
       y="0" />
   <use xlink:href="#child-svg" filter="url(#alpha-to-white)"
