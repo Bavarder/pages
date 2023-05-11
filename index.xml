@@ -3,5 +3,4 @@ Create an account on HuggingFace Follow the documentation for getting an user ac
 Go Home File an issue</description></item><item><title/><link>http://bavarder.codeberg.page/install/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://bavarder.codeberg.page/install/</guid><description>Installation Flatpak Flathub You can either use your GNOME Software and search for &amp;ldquo;Bavarder&amp;rdquo; or you can run
 flatpak install io.github.Bavarder.Bavarder From Source Clone the repo and run flatpak-builder
 git clone https://codeberg.org/Bavarder/Bavarder.git # or https://github.com/Bavarder/Bavarder.git cd Bavarder flatpak-builder --install --user --force-clean repo/ build-aux/flatpak/io.github.Bavarder.Bavarder.json Archlinux Bavarder is available in the AUR. Just use your favourite aur helper!
-yay -S bavarder NixOS Bavarder is available in Nixpkgs Unstable.
-nix-shell -p bavarder Go Home File an issue</description></item></channel></rss>
+yay -S bavarder Go Home File an issue</description></item></channel></rss>
