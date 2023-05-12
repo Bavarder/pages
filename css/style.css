@@ -56,7 +56,6 @@
   --dark3: rgb(61,56,70);
   --dark4: rgb(36,31,49);
   --dark5: rgb(0,0,0);
-  --primary-color: var(--green5); /* Set your project color */
   --borders: var(--light3);
 
   --content-width: 1120px;
