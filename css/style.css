@@ -135,7 +135,7 @@ h2 {
 a {
   font-weight: 600;
   text-decoration: none;
-  color: var(--primary-color);
+  color: var(--accent-color);
   cursor: pointer;
   font-variation-settings: "wght" 600; /* needed for webkit */
 }
