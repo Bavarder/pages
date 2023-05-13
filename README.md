@@ -4,28 +4,7 @@ This is a repository for official Bavarder website.
 
 The website is live at [bavarder.codeberg.page](https://bavarder.codeberg.page)
 
-### Codebase structure:
-```
-.
-├── assets
-│   ├── favicons
-│   │   └── logo-symbolic.svg
-│   ├── fonts
-│   │   ├── Cantarell-Bold.woff2
-│   │   └── Cantarell-Regular.woff2
-│   ├── icons
-│   │   ├── hicolor
-│   │   │   ├── logo-devel.svg
-│   │   │   └── logo-regular.svg
-│   │   └── symbolic
-│   ├── images
-│   │   └── keys-d.webp
-│   └── styles
-│       └── index.css
-├── index.html
-├── LICENSE
-└── README.md
-```
+This website is using [gadolinium](https://gadolinium.exozy.me) which is an Hugo theme. You can find the sources of this website either on [Codeberg](https://codeberg.org/Bavarder/pages-source/src/branch/master) or on [Exozy.me](https://git.exozy.me/0xMRTT/bavarder-pages)
 
 ### Stats
 
