@@ -3,6 +3,6 @@
   "1": {
     "status": "open",
     "provider": "huggingchat",
-    "message": "Hugging Chat is currently unavailable because of changes which now require login"
+    "message": "Hugging Chat is currently unavailable! Use Open-Assistant SFT-1 12B Model instead."
   }
 }
