@@ -1,0 +1,7 @@
+{
+  1: {
+    "status": "open",
+    "provider": "huggingchat",
+    "message": "Hugging Chat is currently unavailable because of changes which now require login"
+  }
+}
