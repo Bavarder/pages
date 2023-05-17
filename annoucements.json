@@ -2,6 +2,7 @@
   "latest": "0.2.2",
   "1": {
     "status": "open",
+    "action": "warn",
     "provider": "huggingchat",
     "message": "Hugging Chat is currently unavailable! Use Open-Assistant SFT-1 12B Model instead."
   }
