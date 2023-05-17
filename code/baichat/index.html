@@ -1,0 +1,36 @@
+<!doctype html><html><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1"><style>:root{--accent-color:#E66100}</style><link rel=stylesheet type=text/css href=/css/style.css><title>Bavarder</title><meta name=description content><meta name=keywords content><meta property="og:url" content="http://bavarder.codeberg.page/code/baichat/"><meta property="og:type" content="website"><meta property="og:title" content="Bavarder"><meta property="og:description" content><meta property="og:image" content="http://bavarder.codeberg.page/"><meta property="og:image:secure_url" content="http://bavarder.codeberg.page/"><meta name=twitter:card content="summary_large_image"><meta name=twitter:title content="Bavarder"><meta name=twitter:description content><meta property="twitter:domain" content="http://bavarder.codeberg.page/code/baichat/"><meta property="twitter:url" content="http://bavarder.codeberg.page/code/baichat/"><meta name=twitter:image content="http://bavarder.codeberg.page/"><link rel=canonical href=http://bavarder.codeberg.page/code/baichat/><link rel="shortcut icon" type=image/png href=/assets/favicon.png><link rel=apple-touch-icon type=image/png href=/assets/apple-touch-icon.png><script defer data-domain=bavarder.codeberg.page src=/js/script.js></script></head><body><header class=site-header><h1 id=logo><a href=http://bavarder.codeberg.page/></a></h1></header><div class=container><h1 id=baichat-api-pythonhttpscodebergorgbavarderbaichat-py><a href=https://codeberg.org/Bavarder/baichat-py>BAIChat API Python</a></h1><h2 id=installation>Installation</h2><h3 id=pypi>Pypi</h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span>pip install baichat-py
+</span></span></code></pre></div><h3 id=codeberghttpscodebergorgbavarderbaichat-py><a href=https://codeberg.org/Bavarder/baichat-py>Codeberg</a></h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span>pip install --index-url https://codeberg.org/api/packages/Bavarder/pypi/simple/ baichat-py
+</span></span></code></pre></div><h2 id=usage>Usage</h2><h3 id=async>Async</h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#f92672>import</span> asyncio
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>loop <span style=color:#f92672>=</span> asyncio<span style=color:#f92672>.</span>get_event_loop() 
+</span></span><span style=display:flex><span>hello <span style=color:#f92672>=</span> loop<span style=color:#f92672>.</span>run_until_complete(chat<span style=color:#f92672>.</span>async_ask(<span style=color:#e6db74>&#34;Hi&#34;</span>))
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>print(hello<span style=color:#f92672>.</span>text)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># =&gt; Hello! How can I assist you today?</span>
+</span></span></code></pre></div><h3 id=context-manager>Context manager</h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#66d9ef>with</span> BAIChat() <span style=color:#66d9ef>as</span> (loop, chat):
+</span></span><span style=display:flex><span>    hello <span style=color:#f92672>=</span> chat<span style=color:#f92672>.</span>ask(<span style=color:#e6db74>&#34;Hi&#34;</span>)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    print(hello<span style=color:#f92672>.</span>text)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># =&gt; Hello! How can I assist you today?</span>
+</span></span></code></pre></div><h3 id=delta>Delta</h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#66d9ef>with</span> BAIChat() <span style=color:#66d9ef>as</span> (loop, chat):
+</span></span><span style=display:flex><span>    hello <span style=color:#f92672>=</span> chat<span style=color:#f92672>.</span>ask(<span style=color:#e6db74>&#34;Hi&#34;</span>)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>for</span> delta <span style=color:#f92672>in</span> hello:
+</span></span><span style=display:flex><span>        print(delta<span style=color:#f92672>.</span>text)
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span><span style=color:#75715e># =&gt; Hello</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># =&gt; Hello!</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># =&gt; Hello! How</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># =&gt; Hello! How may</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># =&gt; Hello! How may I</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># =&gt; Hello! How may I assist</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># =&gt; Hello! How may I assist you</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># =&gt; Hello! How may I assist you today</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># =&gt; Hello! How may I assist you today?</span>
+</span></span></code></pre></div><h3 id=sync>Sync</h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span>chat <span style=color:#f92672>=</span> BAIChat()
+</span></span><span style=display:flex><span>print(chat<span style=color:#f92672>.</span>sync_ask(<span style=color:#e6db74>&#34;Hello, how are you?&#34;</span>)<span style=color:#f92672>.</span>text)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># =&gt; Hello! As an AI language model, I don&#39;t have feelings, but I&#39;m functioning properly and ready to assist you. How may I help you today?</span>
+</span></span></code></pre></div><p class=dialog-buttons><a href=/ class=inline-button>Go Home</a> <a href=https://codeberg.org/Bavarder/pages/issues>File an issue</a></p></div><footer class=site-footer><p>&copy; Bavarder, 2023</p><p><a href=https://codeberg.org/Bavarder/pages>Website source</a></p></footer></body></html>
