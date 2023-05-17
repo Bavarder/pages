@@ -4,6 +4,6 @@
     "status": "open",
     "action": "warn",
     "provider": "huggingchat",
-    "message": "Hugging Chat is currently unavailable! Use Open-Assistant SFT-1 12B Model instead."
+    "message": "Hugging Chat has been disabled! Use Open-Assistant SFT-1 12B Model instead which is the model powering Hugging Chat"
   }
 }
